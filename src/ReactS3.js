@@ -50,7 +50,7 @@ class ReactS3 {
     }
     static delete(fileName, config) {
         const fd = new FormData();
-        const url = `https://${config.bucketName}.s3-${config.region}.amazonaws.com/${config.albumName ? config.albumName + '/' : ''}${fileName}`
+        const url = `https://${config.bucketName}.s3.amazonaws.com/${config.albumName ? config.albumName + '/' : ''}${fileName}`
         fd.append('Date', xAmzDate)
         fd.append('X-Amz-Date', xAmzDate);
         fd.append('Authorization', Signature.getSignature(config, dateYMD, Policy.getPolicy(config)));

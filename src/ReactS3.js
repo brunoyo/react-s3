@@ -10,7 +10,7 @@ class ReactS3 {
     static upload(file, config) {
         const fd = new FormData();
         const key = `${config.albumName ? config.albumName + '/' : ''}${file.name}`;
-        const url = `https://${config.bucketName}.s3.amazonaws.com/`
+        const url = `https://${config.bucketName}.s3.amazonaws.com/`;
         fd.append('key', key);
         fd.append('acl', 'public-read');
         fd.append('Content-Type', file.type);
